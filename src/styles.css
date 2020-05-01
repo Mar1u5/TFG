@@ -1,0 +1,106 @@
+/* You can add global styles to this file, and also import other style files */
+#books {
+    border-radius: 0.25rem;
+    background: #f9f9f9 !important;
+  }
+  section {
+    padding: 20px 0;
+  }
+  #books .card {
+    border: none;
+    background: #fff;
+  }
+  .card_book {
+    position: relative;
+    /* -webkit-transform: rotateY(0deg); */
+    z-index: 2;
+    margin-bottom: 30px;
+  }
+  
+  .card_book .card {
+    min-height: 312px;
+  }
+  
+  p.card-text,
+  h4.card-title {
+    min-height: 96px !important;
+  }
+  
+  .card-title {
+    color: #007bff;
+    cursor: pointer;
+  }
+  
+  .card_book .card .card-body img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+  }
+  
+  div.container-precio-idioma{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+
+  /* chat */
+  .main-container{
+    margin-top: 40px;
+    margin-bottom: 150px;
+  }
+  
+  .puntero{
+    cursor: pointer;
+  }
+  
+  
+  .chat-window{
+    padding: 10px;
+    width: 300px;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #4080FF;
+    border-radius: 20px;
+  }
+  
+  .app-mensajes{
+    overflow-y:scroll;
+    height:270px;
+    /*background:gray;*/
+    padding: 5px;
+  }
+  
+  
+  /* Animaciones */
+  .animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  
+  .fast {
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .fadeIn {
+    animation-name: fadeIn;
+  }
+  
+  
+  
+  

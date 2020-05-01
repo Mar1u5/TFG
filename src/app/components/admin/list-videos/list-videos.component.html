@@ -1,0 +1,64 @@
+
+<div class="pt-3"> hola {{ isAdmin }}</div>                 
+<div class="constainer">
+    <button class="btn btn-outline-primary"
+    [routerLink]="['/addVideo']" >
+        Add video
+    </button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="card-columns">
+    <div class="card animated fadeIn" *ngFor="let video of videos">
+          <img [src]="video.thumbnails.high.url" class="card-img-top" [alt]="video.title">
+          <div class="card-body">
+            <h5 class="card-title">{{video.title}}</h5>
+            <p class="card-text">{{video.description}}</p>
+            <button 
+                type="button" 
+                class="btn btn-outline-primary btn-block"
+                [routerLink]="['/video', video.resourceId.videoId]" >
+                Ver video
+            </button>
+            <!-- // TODO Comprobar si el usuario tiene permisos para editar. Mostrar en caso afirmativo. -->
+            <div *ngIf="isAdmin == true; else noAdmin">
+            <button 
+            [routerLink]="['/videos', video.resourceId.videoId]" 
+            type="button" 
+                class="btn btn-outline-danger btn-block"
+                 >
+                Editar video
+        </button>
+    </div>
+        <ng-template #noAdmin>
+                <button 
+                disabled="true"
+                type="button" 
+                class="btn btn-outline-danger btn-block"
+                 >
+                Editar video
+        </button>
+
+        </ng-template>
+        
+          
+        </div>
+    </div>
+
+</div>
+<button (click)="moreVideos()"
+type="button" class="btn btn-outline-primary btn-block">
+ More Videos
+</button>
+

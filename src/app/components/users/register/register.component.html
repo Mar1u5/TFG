@@ -1,0 +1,116 @@
+<section id="register" class="mb-5 mt-5" style="display: flex;">
+  <div class="container">
+    <div class="row">
+      <!-- TODO Añadir nombre de forma obligatoria en el registro -->
+      <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
+        <div class="card_register">
+          <div class="card">
+            <div class="card-body text-center">
+              <form #formRegister="ngForm" 
+                    (ngSubmit)="addUser()">
+                <img  src="../../../../assets/logo_tfg.png" 
+                      alt="StreamEDU" style="width: 50%; height: 50%;">
+                <hr>
+                <h1 class="h3 mb-3 font-weight-normal">
+                  Register
+                </h1>
+                <!-- <div  class="alert alert-danger" 
+                role="alert" 
+                *ngIf="isError"> {{msgError}}
+          </div>                -->
+
+                <div class="form-group">
+                  <input type="text" name="name" class="form-control" placeholder="Full Name" [(ngModel)]="name" required minlength="3" maxlength="50">
+                  <div class="alert alert-danger" role="alert" >
+                      <!-- <div class="alert alert-danger" role="alert" *ngIf="name.touched && !name.valid"> -->
+                    <!-- <div *ngIf="name.errors.required"> Name Required</div> -->
+                    <!-- <div *ngIf="name.errors.minlenght"> Name must be at least 3 characters</div> -->
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input  [(ngModel)]="email"
+                          type="email"  
+                          name="email" 
+                          class="form-control" 
+                          placeholder="Email" 
+                          required
+                          minlength="8">
+                </div>
+                <!-- <div class="alert alert-danger" 
+                            role="alert" 
+                            *ngIf="email.touched && !email.valid">
+                  <div *ngIf="email.errors.required">
+                    Email is required
+                  </div>
+                  <div *ngIf="email.errors.minlength">
+                    Email must be at least 8 characters
+                  </div>
+                </div> -->
+                <div class="form-group">
+                  <input  [(ngModel)]="password"
+                          type="password" 
+                          name="password" 
+                          class="form-control" 
+                          placeholder="Password" 
+                          required minlength="5" maxlength="10">
+                </div>
+                <!-- <div  class="alert alert-danger" 
+                      role="alert" 
+                      *ngIf="password.touched && !password.valid">
+                  <div *ngIf="password.errors.required">
+                    Password is required
+                  </div>
+                  <div *ngIf="password.errors.minlength">
+                    Password must be at least 5 characters
+                  </div>
+                </div> -->
+<!-- //TODO Finalizar añadir nombre al usuario -->
+                <!-- <div class="form-group">
+                    <input  
+                            class="form-control" 
+                            type="text" 
+                            placeholder="Full User Name"
+                            name ="userName"
+                            ngModel
+                            minlength="3"
+                            required
+                            >
+                            <p> Nombre es{{userName}}</p>
+                </div> -->
+<!-- 
+                 <div  class="alert alert-danger" 
+                      role="alert" 
+                      *ngIf="userName.touched && !userName.valid">
+                  <div *ngIf="userName.errors.required">
+                    Full Name is required
+                  </div>
+                  <div *ngIf="userName.errors.minlength">
+                    Full Namme must be at least 3 characters
+                  </div>
+                </div> -->
+                
+                <button type="submit" 
+                        class="btn btn-lg btn-primary btn-block">Register
+                </button>
+
+                <div class="form-group">
+                  <a  routerLink="/user/login" 
+                      class="form-control login-user">Do you have account?
+                  </a>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-block btn-social" 
+                            (click)="loginGoogle()" > 
+                            <img  src="../../../../assets/google/btn_google_signin_dark_pressed_web@2x.png" 
+                                  class="btn btn-block btn-social"
+                                  alt="Google">
+                    </button>       
+                  </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

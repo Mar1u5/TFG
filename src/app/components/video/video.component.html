@@ -1,0 +1,107 @@
+<br>
+<div class="container main-constainer" style="box-sizing: border-box;" >
+<div class="center">
+    <!-- <iframe src="https://www.youtube.com/embed/" frameborder="0"></iframe> -->
+    <iframe  width="560" height="315" [src]=" videoId | videoYoutube " frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<div class="container "><p> el video seleccionado es : {{ videoId | json }} </p>
+    
+</div>
+
+    <div class="chat-window">
+        <!-- <button type="button" class="btn btn-primary">Iniciar Chat</button> -->
+        <h1>Chat</h1>
+        <hr>
+        <div class="app-mensajes" id="app-mensajes">
+                <div *ngFor="let chat of appService.chats">
+                  
+                <div *ngIf="chat.videoId == videoId"
+                     [ngClass]="{'text-right': appService.usuario.uid == chat.uid }">
+                        <span *ngIf="chat.videoId == videoId"
+                               class="badge badge-primary"
+                              [ngClass]="{'badge-primary': appService.usuario.uid == chat.uid,
+                                          'badge-success': appService.usuario.uid != chat.uid  }"
+                        >{{chat.nombre}}</span>
+                        <p>
+                            {{ chat.mensaje }}
+                        </p>
+                      </div>
+                    </div>
+        </div>
+
+        <!-- <div class="app-mensajes" id="app-mensajes">
+            <div *ngFor="let mensajesVideo of mensajesVideos"
+                 [ngClass]="{'text-right': appService.usuario.uid == mensajesVideo.uid }">
+                    <span class="badge badge-primary"
+                          [ngClass]="{'badge-primary': appService.usuario.uid == mensajesVideo.uid,
+                                      'badge-success': appService.usuario.uid != mensajesVideo.uid  }"
+                    >{{mensajesVideo.nombre}}</span>
+                    <p>
+                        {{ mensajesVideo.mensaje }}
+                    </p>
+                </div>
+    </div> -->
+        <input type="text" name="mensaje" [(ngModel)]="mensaje" (keyup.enter)="enviar_mensaje()" class="form-control" placeholder="Enviar mensaje">
+    </div>
+<hr>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <section id="books">
+    <div class="container">
+      <div class="row">
+        <br>
+        <br>
+        videos
+        <div  class="col-xs-12 col-sm-6 col-md-4" 
+              *ngFor="let book of books">
+          <div class="card_book">
+            <div class="card">
+              <div class="card-body text-center">
+                <p>
+                  <img  class="img-fluid" 
+                        src="{{book.portada}}" 
+                        alt="{{book.titulo}}">
+                </p>
+                <h4 routerLink="/book/{{book.id}}" 
+                    class="card-title">
+                    {{book.titulo}}
+                </h4>
+                <p class="card-text">
+                   {{book.descripcion }}
+                </p>
+                <div class="container-precio-idioma">
+                  <p class="badge badge-info">
+                     {{book.precio}}€
+                  </p>
+                  <p class="badge badge-info">
+                     {{book.idioma}}
+                  </p>
+                </div>
+                <a  href="{{book.link_amazon}}" 
+                    class="btn btn-block btn-primary" 
+                    target="_blank">
+                    Buy
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
